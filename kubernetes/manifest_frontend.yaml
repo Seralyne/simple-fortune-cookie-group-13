@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: manifest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: manifest
+  template:
+    metadata:
+      labels:
+        app: manifest
+    spec:
+      containers:
+        - name: frontend
+          image: ghcr.io/seralyne/fortune-cookie-frontend:1.0-3665c9d2
+          ports:
+            - containerPort: 8080
