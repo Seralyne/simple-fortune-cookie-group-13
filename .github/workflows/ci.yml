@@ -75,7 +75,7 @@ jobs:
       - name: Persist kubeconfig and deploy
         run: |
               echo "${{ secrets.KUBECONFIG }}" | base64 -d > kubeconfig
-              kubectl --kubeconfig kubeconfig apply -f manifest_backend.yaml -f manifest_frontend.yaml -f redis.yaml
+              kubectl --kubeconfig kubeconfig apply -f kubernetes/manifest_backend.yaml -f kubernetes/manifest_frontend.yaml -f kubernetes/redis.yaml
               
               echo "✅ Deployment successful!"
 
