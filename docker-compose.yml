@@ -1,0 +1,13 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - 9000:9000
+    #environment:
+
+  frontend:
+    build: ./frontend
+    ports:
+      - 8080:8080
+    depends_on:
+      - backend
