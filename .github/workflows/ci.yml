@@ -78,4 +78,9 @@ jobs:
               kubectl --kubeconfig kubeconfig apply -f kubernetes/manifest_backend.yaml -f kubernetes/manifest_frontend.yaml -f kubernetes/redis.yaml
               
               echo "✅ Deployment successful!"
-
+  Smoke-Test:
+    runs-on: ubuntu-latest
+    needs: Deploy
+    steps: 
+      - name: Run Smoke Test Script
+        run: ci/test-endpoint.sh
