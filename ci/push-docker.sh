@@ -9,6 +9,6 @@ if [[ -z "${github_password}" ]]; then
 	exit 1
 fi
 echo "${github_password}" | docker login ghcr.io --username "${github_username}" --password-stdin
-docker push "ghcr.io/${github_username}/micronaut-app:1.0-${GIT_COMMIT::8}"
-docker push "ghcr.io/${github_username}/micronaut-app:latest" &
+docker push "ghcr.io/${github_username}/fortune-cookie-frontend:1.0-${GIT_COMMIT::8}"
+docker push "ghcr.io/${github_username}/fortune-cookie-frontend:latest" &
 wait

@@ -14,4 +14,5 @@ fi
 [[ -z "${GIT_COMMIT:-}" ]] && Tag='local' || Tag="${GIT_COMMIT::8}"
 REPO="ghcr.io/${USER}/"
 echo "Using repository prefix: ${REPO}"
-docker build -t "${REPO}micronaut-app:latest" -t "${REPO}micronaut-app:1.0-$Tag" app/
+docker build -t "${REPO}fortune-cookie-backend:latest" -t "${REPO}fortune-cookie-backend:1.0-$Tag" backend/
+docker build -t "${REPO}fortune-cookie-frontend:latest" -t "${REPO}fortune-cookie-frontend:1.0-$Tag" frontend/
