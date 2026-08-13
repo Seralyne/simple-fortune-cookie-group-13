@@ -1,12 +1,12 @@
 services:
   backend:
-    build: ./backend
+    build: ghcr.io/seralyne/fortune-cookie-backend:latest
     ports:
       - 9000:9000
     #environment:
 
   frontend:
-    build: ./frontend
+    image: ghcr.io/seralyne/fortune-cookie-frontend:latest
     ports:
       - 8080:8080
     depends_on:
