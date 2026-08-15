@@ -1,11 +1,6 @@
-name: continuous integration
+name: CI/CD To Main
 on:
   push:
-    branches:
-      - main
-      - dev/*
-      - Dev/*
-  pull_request:
     branches:
       - main
 
